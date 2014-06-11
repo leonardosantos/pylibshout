@@ -1,10 +1,4 @@
 import sys
-import os
-
-os.environ['PKG_CONFIG_PATH'] += ':/app/.apt/usr/lib/pkgconfig:/app/.dpkg/usr/lib/x86_64-linux-gnu/pkgconfig/'
-os.environ['C_INCLUDE_PATH'] += ':/app/.apt/usr/include/:/app/.dpkg/usr/include/'
-os.environ['LIBRARY_PATH'] += ':/app/.apt/usr/lib/:/app/.dpkg/usr/lib/x86_64-linux-gnu/'
-
 
 cdef extern from "sys/types.h":
     ctypedef unsigned int size_t
