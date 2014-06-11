@@ -14,6 +14,11 @@ Operating System :: OS Independent
 
 from distutils.core import setup
 from distutils.extension import Extension
+import os
+
+os.environ['PKG_CONFIG_PATH'] += ':/app/.apt/usr/lib/pkgconfig:/app/.dpkg/usr/lib/x86_64-linux-gnu/pkgconfig/'
+os.environ['C_INCLUDE_PATH'] += ':/app/.apt/usr/include/:/app/.dpkg/usr/include/'
+os.environ['LIBRARY_PATH'] += ':/app/.apt/usr/lib/:/app/.dpkg/usr/lib/x86_64-linux-gnu/'
 
 doclines = __doc__.split("\n")
 
