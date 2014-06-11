@@ -4,13 +4,6 @@ from distutils.extension import Extension
 from Cython.Distutils import build_ext
 import os
 
-os.environ['PKG_CONFIG_PATH'] = os.environ.get('PKG_CONFIG_PATH', '')
-os.environ['C_INCLUDE_PATH'] = os.environ.get('C_INCLUDE_PATH', '')
-os.environ['LIBRARY_PATH'] = os.environ.get('LIBRARY_PATH', '')
-os.environ['PKG_CONFIG_PATH'] += ':/app/.apt/usr/lib/pkgconfig:/app/.dpkg/usr/lib/x86_64-linux-gnu/pkgconfig/'
-os.environ['C_INCLUDE_PATH'] += ':/app/.apt/usr/include/:/app/.dpkg/usr/include/'
-os.environ['LIBRARY_PATH'] += ':/app/.apt/usr/lib/:/app/.dpkg/usr/lib/x86_64-linux-gnu/'
-
 argv = []
 argv.append(sys.argv[0])
 argv.append('build_ext')

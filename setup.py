@@ -16,12 +16,9 @@ from distutils.core import setup
 from distutils.extension import Extension
 import os
 
-os.environ['PKG_CONFIG_PATH'] = os.environ.get('PKG_CONFIG_PATH', '')
-os.environ['C_INCLUDE_PATH'] = os.environ.get('C_INCLUDE_PATH', '')
-os.environ['LIBRARY_PATH'] = os.environ.get('LIBRARY_PATH', '')
-os.environ['PKG_CONFIG_PATH'] += ':/app/.apt/usr/lib/pkgconfig:/app/.dpkg/usr/lib/x86_64-linux-gnu/pkgconfig/'
-os.environ['C_INCLUDE_PATH'] += ':/app/.apt/usr/include/:/app/.dpkg/usr/include/'
-os.environ['LIBRARY_PATH'] += ':/app/.apt/usr/lib/:/app/.dpkg/usr/lib/x86_64-linux-gnu/'
+os.environ['C_INCLUDE_PATH'] += ':/app/.apt/usr/include/'
+os.environ['LIBRARY_PATH'] += ':/app/.apt/usr/lib/'
+print os.environ
 
 doclines = __doc__.split("\n")
 
