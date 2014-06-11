@@ -14,11 +14,6 @@ Operating System :: OS Independent
 
 from distutils.core import setup
 from distutils.extension import Extension
-import os
-
-os.environ['C_INCLUDE_PATH'] += ':/app/.apt/usr/include/'
-os.environ['LIBRARY_PATH'] += ':/app/.apt/usr/lib/'
-print os.environ
 
 doclines = __doc__.split("\n")
 
