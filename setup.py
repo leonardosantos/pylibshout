@@ -17,6 +17,8 @@ from distutils.extension import Extension
 
 import os
 
+os.environ['C_INCLUDE_PATH'] = os.environ.get('C_INCLUDE_PATH', '')
+os.environ['LIBRARY_PATH'] = os.environ.get('LIBRARY_PATH', '')
 os.environ['C_INCLUDE_PATH'] += ':/app/.apt/usr/include/'
 os.environ['LIBRARY_PATH'] += ':/app/.apt/usr/lib/'
 print os.environ
