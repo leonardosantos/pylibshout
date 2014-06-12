@@ -3651,8 +3651,8 @@ static PyObject *__pyx_pf_10pylibshout_5Shout_6public___get__(PyObject *__pyx_v_
  *             return shout_get_public(self.shout_t)
  * 
  *         def __set__(self, public):             # <<<<<<<<<<<<<<
- *             public = bool(public)
- *             i = shout_set_dumpfile(self.shout_t, public)
+ *             
+ *             i = shout_set_public(self.shout_t, public)
  */
 
 static int __pyx_pf_10pylibshout_5Shout_6public___set__(PyObject *__pyx_v_self, PyObject *__pyx_v_public); /*proto*/
@@ -3661,40 +3661,19 @@ static int __pyx_pf_10pylibshout_5Shout_6public___set__(PyObject *__pyx_v_self, 
   int __pyx_r;
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
-  char *__pyx_t_3;
   int __pyx_t_4;
   __Pyx_SetupRefcountContext("__set__");
   __Pyx_INCREF(__pyx_v_public);
   __pyx_v_i = Py_None; __Pyx_INCREF(Py_None);
 
-  /* "/home/leon/Workspaces/pylibshout/pylibshout.pyx":388
- * 
- *         def __set__(self, public):
- *             public = bool(public)             # <<<<<<<<<<<<<<
- *             i = shout_set_dumpfile(self.shout_t, public)
- *             if i != 0:
- */
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 388; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(((PyObject *)__pyx_t_1));
-  __Pyx_INCREF(__pyx_v_public);
-  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_public);
-  __Pyx_GIVEREF(__pyx_v_public);
-  __pyx_t_2 = PyObject_Call(((PyObject *)((PyObject*)&PyBool_Type)), ((PyObject *)__pyx_t_1), NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 388; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(((PyObject *)__pyx_t_1)); __pyx_t_1 = 0;
-  __Pyx_DECREF(__pyx_v_public);
-  __pyx_v_public = __pyx_t_2;
-  __pyx_t_2 = 0;
-
   /* "/home/leon/Workspaces/pylibshout/pylibshout.pyx":389
  *         def __set__(self, public):
- *             public = bool(public)
- *             i = shout_set_dumpfile(self.shout_t, public)             # <<<<<<<<<<<<<<
+ *             
+ *             i = shout_set_public(self.shout_t, public)             # <<<<<<<<<<<<<<
  *             if i != 0:
  *                 raise Exception(i, 'Public is not correct')
  */
-  __pyx_t_3 = __Pyx_PyBytes_AsString(__pyx_v_public); if (unlikely((!__pyx_t_3) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 389; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_t_2 = PyInt_FromLong(shout_set_dumpfile(((struct __pyx_obj_10pylibshout_Shout *)__pyx_v_self)->shout_t, __pyx_t_3)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 389; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyInt_FromLong(shout_set_public(((struct __pyx_obj_10pylibshout_Shout *)__pyx_v_self)->shout_t, __pyx_v_public)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 389; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_v_i);
   __pyx_v_i = __pyx_t_2;
