@@ -385,7 +385,7 @@ cdef class Shout:
             return shout_get_public(self.shout_t)
 
         def __set__(self, public):
-            public = bool(public)
+            public = int(bool(public))
             i = shout_set_public(self.shout_t, public)
             if i != 0:
                 raise Exception(i, 'Public is not correct')
