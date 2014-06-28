@@ -368,7 +368,7 @@ cdef class Shout:
 
         def __set__(self, data):
             self.shout_metadata_t = shout_metadata_new()
-            self.__metadata = {}
+            self.__metadata.clear()
             for key, value in data.items():
                 value = str(value)
                 shout_metadata_add(self.shout_metadata_t, key, value)
