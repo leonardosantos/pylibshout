@@ -366,13 +366,16 @@ cdef class Shout:
         def __get__(self):
             return self.__metadata
 
-        def __set__(self, dict):
-            for key, value in dict.items():
+        def __set__(self, data):
+            self.shout_metadata_t = shout_metadata_new()
+            self.__metadata = {}
+            for key, value in data.items():
                 value = str(value)
                 shout_metadata_add(self.shout_metadata_t, key, value)
                 self.__metadata[key] = value
 
             i = shout_set_metadata(self.shout_t, self.shout_metadata_t)
+            shout_metadata_free(self.shout_metadata_t)
 
             i = 0
             if i != 0:
